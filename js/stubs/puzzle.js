@@ -66,9 +66,9 @@ function renderPuzzleGame(container) {
       </div>
 
       <div class="pz-img-select">
-        <div class="pz-img-option" style="background-image:url('/img/puzzles/p1.png')" data-img="/img/puzzles/p1.png"></div>
-        <div class="pz-img-option" style="background-image:url('/img/puzzles/p2.png')" data-img="/img/puzzles/p2.png"></div>
-        <div class="pz-img-option" style="background-image:url('/img/puzzles/p3.png')" data-img="/img/puzzles/p3.png"></div>
+        <div class="pz-img-option" style="background-image:url('img/puzzles/p1.png')" data-img="img/puzzles/p1.png"></div>
+        <div class="pz-img-option" style="background-image:url('img/puzzles/p2.png')" data-img="img/puzzles/p2.png"></div>
+        <div class="pz-img-option" style="background-image:url('img/puzzles/p3.png')" data-img="img/puzzles/p3.png"></div>
       </div>
 
       <div style="display:flex;gap:20px">
