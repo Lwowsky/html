@@ -1,19 +1,12 @@
 /* ================= Avatars list ================= */
 
 const AVATARS = [
-  { id: 1, name: "Котик",     icon: "img/avatars/cat.png",      rarity: "common",     requiredLevel: 1 },
-  { id: 2, name: "Песик",     icon: "img/avatars/dog.png",      rarity: "rare",       requiredLevel: 2 },
-  { id: 3, name: "Дельфін",   icon: "img/avatars/dolphin.png",  rarity: "epic",       requiredLevel: 3 },
-  { id: 4, name: "Робот",     icon: "img/avatars/robot.png",    rarity: "legendary",  requiredLevel: 5 },
-  { id: 5, name: "Астронавт", icon: "img/avatars/astro.png",    rarity: "legendary",  requiredLevel: 7 }
+  { id: 1, name: "Новачок", rarity: "common", icon: "img/avatars/common.png" },
+  { id: 2, name: "Досвідчений", rarity: "rare", icon: "img/avatars/rare.png" },
+  { id: 3, name: "Профі", rarity: "epic", icon: "img/avatars/epic.png" },
+  { id: 4, name: "Легенда", rarity: "legendary", icon: "img/avatars/legendary.png" },
+  { id: 5, name: "Епічний", rarity: "mythic", icon: "img/avatars/mythic.png" }
 ];
-
-const RARITY_COLORS = {
-  common: "#cccccc",
-  rare: "#4da3ff",
-  epic: "#b45bff",
-  legendary: "#f2c94c"
-};
 
 /* ================= Avatar save/load ================= */
 
