@@ -2,7 +2,7 @@
 const GAMES = [
   {
     id: 'clicker',
-    image: '../img/games/clicker.png',
+    image: 'img/games/clicker.png',
     title: 'Клікер',
     short: 'Натискай кнопку якомога швидше, щоб набрати очки.',
     desc: 'Гра-клікер: натискайте велику кнопку, збирайте очки. Додайте анімації та звук для фідбеку.',
@@ -12,7 +12,7 @@ const GAMES = [
   },
   {
     id: 'puzzle',
-    image: '../img/games/puzzle.png',
+    image: 'img/games/puzzle.png',
     title: 'Складання пазлів',
     short: 'Перетягуй фрагменти зображення і збирай картинку.',
     desc: 'Фото-пазли з перетягуванням і поворотом фрагментів. Рівні складності і декілька картинок.',
@@ -22,7 +22,7 @@ const GAMES = [
   },
   {
     id: 'moving-target',
-    image: '../img/games/target.png',
+    image: 'img/games/target.png',
     title: 'Рухома мішень',
     short: 'Стріляй у рухомі цілі. Є життя та різні швидкості.',
     desc: 'Мішені рухаються по екрану. Гравець стріляє та заробляє очки, за пропуск — втрачає життя.',
@@ -32,7 +32,7 @@ const GAMES = [
   },
   {
     id: 'minigolf',
-    image: '../img/games/mini-golf.png',
+    image: 'img/games/mini-golf.png',
     title: 'Міні-гольф',
     short: 'Керуйте кулькою, обходьте перешкоди та потрапляйте в лунку.',
     desc: 'Фізика кидка, перешкоди, різні ландшафти. Можливість налаштувати силу і напрям.',
@@ -42,7 +42,7 @@ const GAMES = [
   },
   {
     id: 'speedway',
-    image: '../img/games/racing.png',
+    image: 'img/games/racing.png',
     title: 'Спідвей',
     short: 'Керуй мотоциклом, обганяй суперників на трасі.',
     desc: 'Гоночна гра: вибір мотоцикла, траси, змагання проти AI. Повернення, дрифт, бустер.',
@@ -52,7 +52,7 @@ const GAMES = [
   },
   {
     id: 'space-def',
-    image: '../img/games/rocket.png',
+    image: 'img/games/rocket.png',
     title: 'Космічний захист',
     short: 'Захищай корабель від ворожих супутників і астероїдів.',
     desc: 'Шутер у космосі з апгрейдами зброї та захисту. Хвилі ворогів і боси.',
@@ -62,7 +62,7 @@ const GAMES = [
   },
   {
     id: 'block-shift',
-    image: '../img/games/block.png',
+    image: 'img/games/block.png',
     title: 'Переставлення блоків',
     short: 'Переставляй блоки щоб отримати потрібну форму.',
     desc: 'Головоломка про перестановку блоків на полі. Можна вибирати рівні складності.',
@@ -72,7 +72,7 @@ const GAMES = [
   },
   {
     id: 'butterflies',
-    image: '../img/games/butterfly.png',
+    image: 'img/games/butterfly.png',
     title: 'Метелики',
     short: 'Лови метеликів на полі — різні види і рівні.',
     desc: 'Гра на реакцію: ловіть метеликів, ускладнення з часом, бонуси.',
