@@ -105,6 +105,4 @@ function renderClickerStub(container) {
   });
 }
 
-addXP(score); // 1 очко = 1 XP
-renderPlayerInfo(document.getElementById("playerInfo"));
 
