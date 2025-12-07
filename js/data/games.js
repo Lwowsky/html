@@ -12,7 +12,7 @@ const GAMES = [
   },
   {
     id: 'puzzle',
-    image: '/img/games/puzzle.png',
+    image: 'img/games/puzzle.png',
     title: 'Складання пазлів',
     short: 'Перетягуй фрагменти зображення і збирай картинку.',
     desc: 'Фото-пазли з перетягуванням і поворотом фрагментів. Рівні складності і декілька картинок.',
@@ -82,7 +82,7 @@ const GAMES = [
   },
   {
     id: 'ROCK',
-    image: '/img/games/rock-paper-scissors.png',
+    image: 'img/games/rock-paper-scissors.png',
     title: 'ROCK',
     short: 'Лови метеликів на полі — різні види і рівні.',
     desc: 'Гра на реакцію: ловіть метеликів, ускладнення з часом, бонуси.',
