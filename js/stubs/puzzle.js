@@ -245,7 +245,6 @@ function renderPuzzleGame(container) {
 
   startGame();
 }
-addXP(20);
 /* ================== PUZZLE GAME ================== */
 function renderPuzzleGame(container) {
   container.innerHTML = `

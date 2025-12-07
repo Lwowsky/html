@@ -409,5 +409,4 @@ function renderMinigolfStub(container){
   activeLevel = 0;
   setLevelLayout();
 }
-/* XP нараховується при завершенні рівня (див. вище) */
-addXP(50);
+

@@ -1,4 +1,4 @@
-function renderAvatarMenu(container) {
+/*function renderAvatarMenu(container) {
   const avatar = getAvatar();
   const level = getLevel();
   const xpProgress = getXPProgress();
@@ -21,4 +21,4 @@ function renderAvatarMenu(container) {
       </div>
     </div>
   `;
-}
+} */
