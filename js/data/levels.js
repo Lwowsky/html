@@ -8,9 +8,9 @@ const LEVELS = {
   ],
 
   puzzle: [
-    { id: 1, size: 3, image: "/img/puzzles/p1.png" },
-    { id: 2, size: 4, image: "/img/puzzles/p2.png" },
-    { id: 3, size: 5, image: "/img/puzzles/p3.png" }
+    { id: 1, size: 3, image: "img/puzzles/p1.png" },
+    { id: 2, size: 4, image: "img/puzzles/p2.png" },
+    { id: 3, size: 5, image: "img/puzzles/p3.png" }
   ],
 
   movingTarget: [

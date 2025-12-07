@@ -1,11 +1,11 @@
 /* ================= Avatars list ================= */
 
 const AVATARS = [
-  { id: 1, name: "Котик", icon: "/img/puzzles/p1.png" },
-  { id: 2, name: "Песик", icon: "/img/avatars/dog.png" },
-  { id: 3, name: "Дельфін", icon: "/img/avatars/dolphin.png" },
-  { id: 4, name: "Робот", icon: "/img/avatars/robot.png" },
-  { id: 5, name: "Астронавт", icon: "/img/avatars/astro.png" }
+  { id: 1, name: "Котик", icon: "img/puzzles/p1.png" },
+  { id: 2, name: "Песик", icon: "img/avatars/dog.png" },
+  { id: 3, name: "Дельфін", icon: "img/avatars/dolphin.png" },
+  { id: 4, name: "Робот", icon: "img/avatars/robot.png" },
+  { id: 5, name: "Астронавт", icon: "img/avatars/astro.png" }
 ];
 
 /* === Avatar save/load === */
