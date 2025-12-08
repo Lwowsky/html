@@ -16,6 +16,7 @@ function createCard(g){
     <div class="meta">
       <div class="pill">Рівні складності</div>
       <div class="pill">Рекорди</div>
+      <div class="pill">XP за проходження</div>
       <div class="pill">Міні-гра</div>
     </div>
 
