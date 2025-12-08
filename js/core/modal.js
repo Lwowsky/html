@@ -1,3 +1,15 @@
+const modalBack = document.getElementById('modalBack');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalGoal = document.getElementById('modalGoal');
+const modalBullets = document.getElementById('modalBullets');
+const modalTips = document.getElementById('modalTips');
+const playArea = document.getElementById('playArea');
+const playBtn = document.getElementById('playBtn');
+const docsBtn = document.getElementById('docsBtn');
+const exampleBtn = document.getElementById('exampleBtn');
+const closeModal = document.getElementById('closeModal');
+
 let activeGame = null;
 
 function openModal(game, mode = 'details'){
