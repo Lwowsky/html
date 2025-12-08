@@ -17,10 +17,7 @@
             можливості.
           </div>
         </div>
-        <div class="button-reg">
-          
-          <div id="playerInfo"></div>
-        </div>
+        <div id="playerInfo"></div>
       </header>
       <div class="topbar">
         <input
@@ -90,6 +87,47 @@
           реалізації ігор у модалках.
         </div>
       </footer>
+    </div>
+    <!-- Profile Modal -->
+    <div id="profileModal" class="profile-modal hidden">
+      <div class="profile-window">
+        <h2>Налаштування профілю</h2>
+        <label>Нікнейм:</label>
+        <input id="profileName" type="text" class="input-box" />
+        <label>Стать:</label>
+        <select id="profileGender" class="input-box">
+          <option value="male">Чоловік</option>
+          <option value="female">Жінка</option>
+        </select>
+        <div class="profile-actions">
+          <button id="saveProfile" class="btn">Зберегти</button>
+          <button id="closeProfile" class="btn secondary">Закрити</button>
+        </div>
+      </div>
+    </div>
+    <!-- Stats Modal -->
+    <div id="statsModal" class="profile-modal hidden">
+      <div class="profile-window" style="max-width: 360px">
+        <h2>📊 Статистика гравця</h2>
+        <div id="statsContent" class="stats-list">
+          Завантаження статистики...
+        </div>
+        <div class="profile-actions">
+          <button id="closeStats" class="btn secondary">Закрити</button>
+        </div>
+      </div>
+    </div>
+    <!-- Avatar Modal -->
+    <div id="avatarModal" class="profile-modal hidden">
+      <div class="profile-window" style="max-width: 360px">
+        <h2>Вибір аватара</h2>
+
+        <div id="avatarList" class="avatar-select-grid"></div>
+
+        <div class="profile-actions">
+          <button id="closeAvatarModal" class="btn secondary">Закрити</button>
+        </div>
+      </div>
     </div>
     <script src="js/data/avatars.js"></script>
     <script src="js/data/games.js"></script>

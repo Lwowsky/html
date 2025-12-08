@@ -434,7 +434,12 @@ button.ghost {
   width: 150px; 
   border-radius: 50%;
 }
-.player-stats { /* small container for player stats (kept for compatibility) */
+.player-avatar:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+.player-stats { 
   display: block;
 }
 .xp-bar {
@@ -464,36 +469,157 @@ button.ghost {
   pointer-events: none;
 }
 
-.avatar-dropdown {
+.avatar-dropdown-menu {
   position: absolute;
   top: 60px;
-  right: 10px;
-  background: #0f172a;
+  right: 0;
+  background: #0b1220;
   border: 1px solid rgba(255,255,255,0.1);
-  padding: 10px;
   border-radius: 10px;
+  width: 180px;
   display: none;
-  width: 200px;
-  z-index: 100;
+  padding: 6px 0;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  animation: fadeIn 0.2s ease;
+  z-index: 1000;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.avatar-dropdown .avatar-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  border-radius: 8px;
+.menu-item {
+  padding: 10px 14px;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: 0.15s;
+  color: #e6eef8;
 }
 
-.avatar-dropdown .avatar-item:hover {
-  background: rgba(255,255,255,0.08);
+.menu-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.menu-item.red {
+  color: #ff6b6b;
+}
+.menu-item.red:hover {
+  background: rgba(255,0,0,0.15);
+}
+
+.profile-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.profile-modal.hidden {
+  display: none;
+}
+
+.profile-window {
+  width: 320px;
+  background: #0b1220;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.profile-window h2 {
+  text-align: center;
+}
+
+.input-box {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 6px 0 12px 0;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111827;
+  color: white;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Сітка аватарів */
+.avatar-select-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Окремий елемент */
+.avatar-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.avatar-card img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Назва */
+.avatar-card span {
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 6px;
+}
+
+/* Активний аватар */
+.avatar-card.active {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+}
+
+/* Заблокований */
+.avatar-card.locked {
+  opacity: 0.35;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.avatar-card.locked::after {
+  content: "🔒";
+  position: absolute;
+  font-size: 1.3rem;
+  top: 6px;
+  right: 10px;
+}
+
+.avatar-locked-text {
+  font-size: 0.7rem;
+  color: #ff9191;
+  margin-top: 4px;
+}
+
+.stats-list {
+  margin-top: 10px;
+  background: #111827;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+}
+
+.stats-list p {
+  margin: 6px 0;
+}
+
+.stats-list ul {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+.stats-list li {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
 }
