@@ -438,14 +438,62 @@ button.ghost {
   display: block;
 }
 .xp-bar {
-  width: 120px;
+  width: 140px;
   height: 16px;
   background: #333;
-  border-radius: 15px;
+  border-radius: 6px;
   overflow: hidden;
+  position: relative;
   margin: 10px 0;
 }
+
 .xp-fill {
   background: #4ade80;
-  height: 16px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.xp-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: red;
+  pointer-events: none;
+}
+
+.avatar-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  width: 200px;
+  z-index: 100;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.avatar-dropdown .avatar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.avatar-dropdown .avatar-item:hover {
+  background: rgba(255,255,255,0.08);
 }
