@@ -49,7 +49,7 @@ function renderTargetStub(container){
   const startBtn = container.querySelector('#tStart');
   const diffSelect = container.querySelector('#tDiff');
 
-  const soundHit = new Audio('/sounds/click.wav'); // ти можеш замінити шлях
+  const soundHit = new Audio('sounds/click.wav'); // ти можеш замінити шлях
 
   function startGame(){
     clearInterval(intervalId);

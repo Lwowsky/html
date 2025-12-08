@@ -96,7 +96,7 @@ function renderPuzzleGame(container) {
   const resetBtn = container.querySelector("#pzReset");
 
   let size = 3;
-  let img = "/img/puzzles/p1.png";
+  let img = "img/puzzles/p1.png";
   let pieces = [];
   let correctOrder = [];
   let dragged = null;

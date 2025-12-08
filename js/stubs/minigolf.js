@@ -91,8 +91,8 @@ function renderMinigolfStub(container){
   const movingPlatform = createZone("#ffeb3b");   // рухома платформа
 
   /* === Sounds === */
-  const hitSound  = new Audio("/sounds/golf-hit.wav");   // додай файл, якщо треба
-  const holeSound = new Audio("/sounds/golf-hole.wav");
+  const hitSound  = new Audio("sounds/golf-hit.wav");   // додай файл, якщо треба
+  const holeSound = new Audio("sounds/golf-hole.wav");
 
   /* === Physics vars === */
   let vx = 0, vy = 0;
