@@ -1,4 +1,3 @@
-/* ================== Moving Target Stub ================== */
 function renderTargetStub(container){
   container.innerHTML = `
     <div class="small">Стріляй по мішені. Вибери рівень та швидкість.</div>
@@ -99,16 +98,10 @@ function renderTargetStub(container){
     target.addEventListener('click', () => {
       score++;
       scoreEl.textContent = score;
-
-      // Анімація попадання
       target.style.transform = 'scale(0.7)';
       setTimeout(()=> target.style.transform='scale(1)', 120);
-
-      // Звук
       soundHit.currentTime = 0;
       soundHit.play();
-
-      // Переміщення мішені випадково
       target.style.top = Math.random() * (stage.clientHeight - targetSize) + 'px';
     });
   }

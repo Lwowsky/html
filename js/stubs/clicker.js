@@ -1,4 +1,3 @@
-/* ================== Clicker game ================== */
 function renderClickerStub(container) {
   container.innerHTML = `
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px; padding:10px;">
@@ -69,7 +68,6 @@ function renderClickerStub(container) {
     bestEl.textContent = best;
 
     alert("⏳ Час вийшов!\nВаш результат: " + score);
-    // нагорода XP та оновлення інформації про гравця
     try {
       addXP(score);
       renderPlayerInfo(document.getElementById("playerInfo"));
@@ -84,11 +82,9 @@ function renderClickerStub(container) {
     score++;
     scoreEl.textContent = score;
 
-    // анімація кнопки
     bigClick.style.transform = "scale(0.9)";
     setTimeout(() => (bigClick.style.transform = "scale(1)"), 100);
 
-    // звук
     sound.currentTime = 1;
     sound.play();
   });

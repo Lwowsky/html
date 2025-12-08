@@ -65,19 +65,16 @@ function renderPlayerInfo(container) {
 }
 
 
-// ==================== Чисте модальне вікно статистики ====================
-
+// Модальне вікно статистики
 function openStatsModal() {
   const modal = document.getElementById("statsModal");
   const statsBlock = document.getElementById("statsContent");
-
   const days = getDaysPlayed();
   const level = getLevel();
   const totalXP = getXP();
   const currentXP = getCurrentLevelXP();
   const nextXP = getXPNeededForNextLevel();
   const xpToNext = nextXP - currentXP;
-
   statsBlock.innerHTML = `
     <p><strong>📅 Днів у грі:</strong> ${days}</p>
     <p><strong>🏅 Рівень:</strong> ${level}</p>
@@ -89,7 +86,6 @@ function openStatsModal() {
   modal.classList.remove("hidden");
 }
 
-// Закриття модалки
 document.getElementById("closeStats").addEventListener("click", () => {
   document.getElementById("statsModal").classList.add("hidden");
 });
@@ -101,7 +97,7 @@ document.getElementById("statsModal").addEventListener("click", (e) => {
 });
 
 
-// ==================== Дні у грі ====================
+// Дні у грі 
 
 function getDaysPlayed() {
   let firstLogin = localStorage.getItem("firstLogin");

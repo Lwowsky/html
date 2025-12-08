@@ -1,4 +1,3 @@
-/* ================== PUZZLE GAME ================== */
 function renderPuzzleGame(container) {
   container.innerHTML = `
     <style>
@@ -106,15 +105,14 @@ function renderPuzzleGame(container) {
 
   bestEl.textContent = best;
 
-  /* ==== SELECT IMAGE ==== */
-  container.querySelectorAll(".pz-img-option").forEach(opt => {
+   container.querySelectorAll(".pz-img-option").forEach(opt => {
     opt.addEventListener("click", () => {
       img = opt.dataset.img;
       startGame();
     });
   });
 
-  /* ==== SELECT DIFFICULTY ==== */
+  /* Рівні*/
   container.querySelectorAll("[data-size]").forEach(btn => {
     btn.addEventListener("click", () => {
       size = Number(btn.dataset.size);
@@ -125,8 +123,7 @@ function renderPuzzleGame(container) {
   shuffleBtn.addEventListener("click", shuffle);
   resetBtn.addEventListener("click", startGame);
 
-  /* ==== START GAME ==== */
-  function startGame() {
+    function startGame() {
     stopTimer();
     time = 0;
     timeEl.textContent = 0;
@@ -155,8 +152,6 @@ function renderPuzzleGame(container) {
         piece.addEventListener("dragstart", dragStart);
         piece.addEventListener("dragover", dragOver);
         piece.addEventListener("drop", dropPiece);
-
-        // Поворот
         piece.addEventListener("contextmenu", e => {
           e.preventDefault();
           rotatePiece(piece);
@@ -173,23 +168,20 @@ function renderPuzzleGame(container) {
     startTimer();
   }
 
-  /* ==== ROTATE ==== */
-  function rotatePiece(piece) {
+    function rotatePiece(piece) {
     const deg = (Number(piece.dataset.rot) || 0) + 90;
     piece.dataset.rot = deg;
     piece.style.transform = `rotate(${deg}deg)`;
   }
 
-  /* ==== SHUFFLE ==== */
-  function shuffle() {
+   function shuffle() {
     pieces.sort(() => Math.random() - 0.5);
     board.innerHTML = "";
     pieces.forEach(p => board.appendChild(p));
     status.textContent = "Перемішано!";
   }
 
-  /* ==== DRAG & DROP ==== */
-  function dragStart() {
+    function dragStart() {
     dragged = this;
   }
 
@@ -212,8 +204,7 @@ function renderPuzzleGame(container) {
     checkWin();
   }
 
-  /* ==== TIMER ==== */
-  function startTimer() {
+   function startTimer() {
     timer = setInterval(() => {
       time++;
       timeEl.textContent = time;
@@ -224,8 +215,7 @@ function renderPuzzleGame(container) {
     clearInterval(timer);
   }
 
-  /* ==== CHECK WIN ==== */
-  function checkWin() {
+   function checkWin() {
     for (let i = 0; i < pieces.length; i++) {
       if (Number(pieces[i].dataset.index) !== correctOrder[i]) return;
     }

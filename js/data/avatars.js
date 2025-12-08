@@ -1,22 +1,78 @@
-/* ================= Avatars list ================= */
-
 const AVATARS = [
   // 👦 Хлопчики
-  { id: 1, name: "Новачок",    rarity: "common",    gender: "male",   icon: "img/avatars/common.png" },
-  { id: 2, name: "Досвідчений",rarity: "rare",      gender: "male",   icon: "img/avatars/rare.png" },
-  { id: 3, name: "Профі",      rarity: "epic",      gender: "male",   icon: "img/avatars/epic.png" },
-  { id: 4, name: "Легенда",    rarity: "legendary", gender: "male",   icon: "img/avatars/legendary.png" },
-  { id: 5, name: "Епічний",    rarity: "mythic",    gender: "male",   icon: "img/avatars/mythic.png" },
+  {
+    id: 1,
+    name: "Новачок",
+    rarity: "common",
+    gender: "male",
+    icon: "img/avatars/common.png",
+  },
+  {
+    id: 2,
+    name: "Досвідчений",
+    rarity: "rare",
+    gender: "male",
+    icon: "img/avatars/rare.png",
+  },
+  {
+    id: 3,
+    name: "Профі",
+    rarity: "epic",
+    gender: "male",
+    icon: "img/avatars/epic.png",
+  },
+  {
+    id: 4,
+    name: "Легенда",
+    rarity: "legendary",
+    gender: "male",
+    icon: "img/avatars/legendary.png",
+  },
+  {
+    id: 5,
+    name: "Епічний",
+    rarity: "mythic",
+    gender: "male",
+    icon: "img/avatars/mythic.png",
+  },
 
   // 👧 Дівчатка
-  { id: 6, name: "Новачка",    rarity: "common",    gender: "female", icon: "img/avatars/common_f.png" },
-  { id: 7, name: "Досвідчена", rarity: "rare",      gender: "female", icon: "img/avatars/rare_f.png" },
-  { id: 8, name: "Профі",      rarity: "epic",      gender: "female", icon: "img/avatars/epic_f.png" },
-  { id: 9, name: "Легенда",    rarity: "legendary", gender: "female", icon: "img/avatars/legendary_f.png" },
-  { id:10, name: "Епічна",     rarity: "mythic",    gender: "female", icon: "img/avatars/mythic_f.png" }
+  {
+    id: 6,
+    name: "Новачка",
+    rarity: "common",
+    gender: "female",
+    icon: "img/avatars/common_f.png",
+  },
+  {
+    id: 7,
+    name: "Досвідчена",
+    rarity: "rare",
+    gender: "female",
+    icon: "img/avatars/rare_f.png",
+  },
+  {
+    id: 8,
+    name: "Профі",
+    rarity: "epic",
+    gender: "female",
+    icon: "img/avatars/epic_f.png",
+  },
+  {
+    id: 9,
+    name: "Легенда",
+    rarity: "legendary",
+    gender: "female",
+    icon: "img/avatars/legendary_f.png",
+  },
+  {
+    id: 10,
+    name: "Епічна",
+    rarity: "mythic",
+    gender: "female",
+    icon: "img/avatars/mythic_f.png",
+  },
 ];
-
-/* ================= Avatar save/load ================= */
 
 function setAvatar(id) {
   localStorage.setItem("avatar", id);
@@ -27,15 +83,14 @@ function getAvatar() {
   const gender = localStorage.getItem("playerGender") || "male";
 
   if (id) {
-    const found = AVATARS.find(a => a.id == id);
+    const found = AVATARS.find((a) => a.id == id);
     if (found) return found;
   }
-
-  // дефолтний: common + поточний gender
-  return AVATARS.find(a => a.gender === gender && a.rarity === "common") || AVATARS[0];
+  return (
+    AVATARS.find((a) => a.gender === gender && a.rarity === "common") ||
+    AVATARS[0]
+  );
 }
-
-/* ================= Player XP system ================= */
 
 function getXP() {
   return Number(localStorage.getItem("xp") || 0);
@@ -52,7 +107,6 @@ function addXP(amount) {
 
   let newLevel = getLevel();
 
-  // Якщо рівень виріс → апгрейд аватара
   if (newLevel > oldLevel) {
     autoUpgradeAvatar(newLevel);
   }
@@ -104,11 +158,11 @@ function getXPNeededForNextLevel() {
 }
 
 function autoUpgradeAvatar(level) {
-   if (AVATARS[level - 1]) {
+  if (AVATARS[level - 1]) {
     setAvatar(AVATARS[level - 1].id);
   }
 
-   if (typeof renderPlayerInfo === "function") {
+  if (typeof renderPlayerInfo === "function") {
     renderPlayerInfo();
   }
 }
@@ -121,31 +175,26 @@ function openAvatarSelection() {
   const currentLevel = getLevel();
   const currentAvatar = getAvatar();
 
-  // очищуємо список
   listEl.innerHTML = "";
 
-  // фільтруємо по статі
-  const avatars = AVATARS.filter(a => a.gender === gender);
+  const avatars = AVATARS.filter((a) => a.gender === gender);
 
-  avatars.forEach(a => {
+  avatars.forEach((a) => {
     const card = document.createElement("div");
     card.className = "avatar-card";
 
-    // активний
     if (currentAvatar.id === a.id) {
       card.classList.add("active");
     }
 
-    // рівень, потрібний для аватара
     const unlockLevel = {
-      "common": 1,
-      "rare": 2,
-      "epic": 3,
-      "legendary": 4,
-      "mythic": 5
+      common: 1,
+      rare: 2,
+      epic: 3,
+      legendary: 4,
+      mythic: 5,
     }[a.rarity];
 
-    // Чи доступний?
     const locked = currentLevel < unlockLevel;
 
     if (locked) {
@@ -155,7 +204,11 @@ function openAvatarSelection() {
     card.innerHTML = `
       <img src="${a.icon}">
       <span>${a.name}</span>
-      ${locked ? `<div class="avatar-locked-text">Відкриється на рівні ${unlockLevel}</div>` : ""}
+      ${
+        locked
+          ? `<div class="avatar-locked-text">Відкриється на рівні ${unlockLevel}</div>`
+          : ""
+      }
     `;
 
     if (!locked) {
@@ -172,11 +225,10 @@ function openAvatarSelection() {
   modal.classList.remove("hidden");
 }
 
-
 function editProfile() {
   const modal = document.getElementById("profileModal");
 
-   document.getElementById("profileName").value =
+  document.getElementById("profileName").value =
     localStorage.getItem("playerName") || "";
 
   document.getElementById("profileGender").value =
@@ -203,19 +255,15 @@ document.getElementById("saveProfile").addEventListener("click", () => {
   renderPlayerInfo();
 });
 
-
 document.getElementById("closeProfile").addEventListener("click", () => {
   document.getElementById("profileModal").classList.add("hidden");
 });
 
-
 function updateAvatarByGender() {
   const gender = localStorage.getItem("playerGender") || "male";
   const currentAvatar = getAvatar();
-
-  // шукаємо аватар ТІЄЇ ж рідкості, але обраної статі
   const newAvatar = AVATARS.find(
-    a => a.rarity === currentAvatar.rarity && a.gender === gender
+    (a) => a.rarity === currentAvatar.rarity && a.gender === gender
   );
 
   if (newAvatar) {
@@ -227,9 +275,12 @@ function autoUpgradeAvatar(level) {
   const gender = localStorage.getItem("playerGender") || "male";
 
   const raritiesByLevel = ["common", "rare", "epic", "legendary", "mythic"];
-  const targetRarity = raritiesByLevel[Math.min(level - 1, raritiesByLevel.length - 1)];
+  const targetRarity =
+    raritiesByLevel[Math.min(level - 1, raritiesByLevel.length - 1)];
 
-  const avatar = AVATARS.find(a => a.rarity === targetRarity && a.gender === gender);
+  const avatar = AVATARS.find(
+    (a) => a.rarity === targetRarity && a.gender === gender
+  );
 
   if (avatar) {
     setAvatar(avatar.id);
