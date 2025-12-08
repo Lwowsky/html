@@ -16,7 +16,7 @@ function renderPlayerInfo(container) {
       <div class="player-stats">
         <div><strong style="font-size: 1.3rem; color: orange">${playerName}</strong></div>
         <div>Рівень: <strong>${getLevel()}</strong></div>
-        <div>XP: ${currentLevelXP} / ${nextLevelXP} (всього: ${totalXP})</div>
+        <div>XP: ${currentLevelXP} / ${nextLevelXP}</div>
 
         <div class="xp-bar">
           <div class="xp-fill" style="width:${xpProgress}%"></div>
@@ -27,7 +27,7 @@ function renderPlayerInfo(container) {
 
     <div id="avatarDropdown" class="avatar-dropdown-menu">
       <div class="menu-item" id="menuChangeAvatar">🎭 Змінити аватар</div>
-      <div class="menu-item" id="menuEditProfile">⚙️ Налаштування профілю</div>
+      <div class="menu-item" id="menuEditProfile">⚙️ Профіль</div>
       <div class="menu-item" id="menuShowStats">📊 Статистика</div>
       <div class="menu-item red" id="menuResetPlayer">🗑 Скинути дані гравця</div>
     </div>

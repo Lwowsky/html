@@ -106,4 +106,3 @@ function renderClickerStub(container) {
 }
 
 
-addGamePlay(game.title);

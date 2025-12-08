@@ -9,7 +9,7 @@ function createCard(g){
       <div class="image"><img src="${g.image}" alt="${g.title}"></div>
       <div>
         <div class="title">${g.title}</div>
-        <div class="desc small">${g.short}</div>
+        <div class="desc">${g.short}</div>
       </div>
     </div>
 
@@ -21,13 +21,10 @@ function createCard(g){
 
     <div class="actions">
       <button class="btn play">Play</button>
-      <button class="btn secondary details">Details</button>
     </div>
   `;
 
   el.querySelector('.play').addEventListener('click', () => openModal(g, 'play'));
-  el.querySelector('.details').addEventListener('click', () => openModal(g, 'details'));
-
   return el;
 }
 

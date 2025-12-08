@@ -42,30 +42,23 @@
         <div id="modalBack" class="modal-back" role="dialog" aria-modal="true">
           <div class="modal" role="document">
             <header>
-              <div id="modalTitle"><strong>Title</strong></div>
+              <div id="modalTitle" class="modal-title"><strong>Title</strong></div>
               <div>
                 <button id="closeModal" class="btn secondary">Close</button>
               </div>
             </header>
             <div class="content">
               <div>
-                <div id="modalDesc" class="placeholder small">Опис гри...</div>
-                <div style="margin-top: 10px; display: flex; gap: 8px">
-                  <button id="playBtn" class="btn">Play (заглушка)</button>
-                  <button id="docsBtn" class="btn secondary">Деталі</button>
-                  <button id="exampleBtn" class="btn secondary">
-                    Приклади
-                  </button>
-                </div>
+                <div id="modalDesc" class="placeholder small"></div>
                 <div id="playArea" style="margin-top: 12px"></div>
               </div>
               <aside>
                 <div class="placeholder small">
-                  <div><strong>Мета</strong></div>
+                  <div style="text-align:center; font-size:1.2rem; color:white;"><strong>Мета</strong></div>
                   <div id="modalGoal" class="small" style="margin-top: 6px">
                     ...
                   </div>
-                  <div style="margin-top: 10px">
+                  <div style="text-align:center; font-size:1.2rem; color:white;">
                     <strong>Ключові елементи</strong>
                   </div>
                   <ul
@@ -75,7 +68,7 @@
                   ></ul>
                 </div>
                 <div style="margin-top: 10px" class="placeholder small">
-                  <div><strong>Поради</strong></div>
+                  <div style="text-align:center; font-size:1.2rem; color:white;"><strong>Поради</strong></div>
                   <ul id="modalTips" style="margin-top: 6px"></ul>
                 </div>
               </aside>
@@ -131,7 +124,6 @@
     </div>
     <script src="js/data/avatars.js"></script>
     <script src="js/data/games.js"></script>
-    <script src="js/data/levels.js"></script>
     <script src="js/ui/playerInfo.js"></script>
     <script src="js/core/render.js"></script>
     <script src="js/core/search.js"></script>
