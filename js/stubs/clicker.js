@@ -16,8 +16,8 @@ function renderClickerStub(container) {
 
       <audio id="clickSound" src="sounds/click.wav"></audio>
 
-      <div class="small">⏳ Time left: <span id="timeLeft">10</span>s</div>
-      <div class="small">🏆 Record: <span id="bestScore">0</span></div>
+      <div class="small">⏳ Лишилось часу: <span id="timeLeft">10</span>s</div>
+      <div class="small">🏆 Рекорд: <span id="bestScore">0</span></div>
 
       <div style="display:flex;gap:10px;margin-top:10px">
         <button id="startClick" class="btn secondary">Start</button>

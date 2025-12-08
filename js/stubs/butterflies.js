@@ -1,5 +1,3 @@
-/* ================== Butterflies Stub ================== */
-
 function renderButterfliesStub(container){
   container.innerHTML = '<div class="small">Лови метеликів — клік по рухомих елементах</div>';
   const stage = document.createElement('div');
