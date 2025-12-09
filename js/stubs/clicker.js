@@ -19,8 +19,8 @@ function renderClickerStub(container) {
       <div class="small">🏆 Рекорд: <span id="bestScore">0</span></div>
 
       <div style="display:flex;gap:10px;margin-top:10px">
-        <button id="startClick" class="btn secondary">Start</button>
-        <button id="resetClick" class="btn secondary">Reset</button>
+        <button id="startClick" class="btn secondary">Почати</button>
+        <button id="resetClick" class="btn secondary">Скинути</button>
       </div>
     </div>
   `;
