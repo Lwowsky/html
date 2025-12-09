@@ -105,14 +105,14 @@ function renderPuzzleGame(container) {
 
   bestEl.textContent = best;
 
-   container.querySelectorAll(".pz-img-option").forEach(opt => {
+  container.querySelectorAll(".pz-img-option").forEach(opt => {
     opt.addEventListener("click", () => {
       img = opt.dataset.img;
       startGame();
     });
   });
 
-  /* Рівні*/
+  // Рівні
   container.querySelectorAll("[data-size]").forEach(btn => {
     btn.addEventListener("click", () => {
       size = Number(btn.dataset.size);
@@ -123,7 +123,7 @@ function renderPuzzleGame(container) {
   shuffleBtn.addEventListener("click", shuffle);
   resetBtn.addEventListener("click", startGame);
 
-    function startGame() {
+  function startGame() {
     stopTimer();
     time = 0;
     timeEl.textContent = 0;
@@ -168,20 +168,20 @@ function renderPuzzleGame(container) {
     startTimer();
   }
 
-    function rotatePiece(piece) {
+  function rotatePiece(piece) {
     const deg = (Number(piece.dataset.rot) || 0) + 90;
     piece.dataset.rot = deg;
     piece.style.transform = `rotate(${deg}deg)`;
   }
 
-   function shuffle() {
+  function shuffle() {
     pieces.sort(() => Math.random() - 0.5);
     board.innerHTML = "";
     pieces.forEach(p => board.appendChild(p));
     status.textContent = "Перемішано!";
   }
 
-    function dragStart() {
+  function dragStart() {
     dragged = this;
   }
 
@@ -204,7 +204,7 @@ function renderPuzzleGame(container) {
     checkWin();
   }
 
-   function startTimer() {
+  function startTimer() {
     timer = setInterval(() => {
       time++;
       timeEl.textContent = time;
@@ -215,19 +215,40 @@ function renderPuzzleGame(container) {
     clearInterval(timer);
   }
 
-   function checkWin() {
+  function checkWin() {
     for (let i = 0; i < pieces.length; i++) {
       if (Number(pieces[i].dataset.index) !== correctOrder[i]) return;
     }
 
+    // Якщо всі на своїх місцях — виграв
     stopTimer();
 
-    status.innerHTML = `<span style="color:#4ade80">🎉 Пазл складено!</span>`;
+    // Розрахунок XP за розмір
+    let gainedXP = 0;
+    if (size === 3) gainedXP = 25;
+    else if (size === 4) gainedXP = 50;
+    else if (size === 5) gainedXP = 100;
 
+    // Додаємо XP, якщо є функція addXP
+    if (typeof addXP === "function" && gainedXP > 0) {
+      addXP(gainedXP);
+    }
+
+    status.innerHTML = `
+      <span style="color:#4ade80">🎉 Пазл складено!</span>
+      ${gainedXP ? ` <span style="color:#4ade80">+${gainedXP} XP</span>` : ""}
+    `;
+
+    // Оновити рекорд часу
     if (best === "—" || time < best) {
       best = time;
       bestEl.textContent = best;
       localStorage.setItem("puzzleBest", best);
+    }
+
+    // Оновити інфо про гравця у шапці, якщо є така функція
+    if (typeof renderPlayerInfo === "function") {
+      renderPlayerInfo();
     }
 
     new Audio("sounds/success.wav").play();
@@ -235,4 +256,3 @@ function renderPuzzleGame(container) {
 
   startGame();
 }
-
