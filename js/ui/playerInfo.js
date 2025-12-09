@@ -96,9 +96,6 @@ document.getElementById("statsModal").addEventListener("click", (e) => {
   }
 });
 
-
-// Дні у грі 
-
 function getDaysPlayed() {
   let firstLogin = localStorage.getItem("firstLogin");
 

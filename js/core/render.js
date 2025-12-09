@@ -21,7 +21,7 @@ function createCard(g){
     </div>
 
     <div class="actions">
-      <button class="btn play">Play</button>
+      <button class="btn play">Іграти</button>
     </div>
   `;
 

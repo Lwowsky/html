@@ -34,7 +34,7 @@
         </div>
       </div>
       <main class="main-container">
-        <h2 class="info-main">Games</h2>
+        <h2 class="info-main">Ігровий портал</h2>
         <section class="grid" id="grid"></section>
       </main>
       <footer>
@@ -44,7 +44,7 @@
             <header>
               <div id="modalTitle" class="modal-title"><strong>Title</strong></div>
               <div>
-                <button id="closeModal" class="btn secondary">Close</button>
+                <button id="closeModal" class="btn secondary">Закрити</button>
               </div>
             </header>
             <div class="content">
@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="footer-main">
-          &copy; 2025 Game Heaven — твій портал у світ міні-ігор. Усі права захищено.
+          &copy; <span id="years"></span> Game Heaven — твій портал у світ міні-ігор. Усі права захищено.
         </div>
       </footer>
     </div>
@@ -101,9 +101,7 @@
     <div id="statsModal" class="profile-modal hidden">
       <div class="profile-window" style="max-width: 360px">
         <h2>📊 Статистика гравця</h2>
-        <div id="statsContent" class="stats-list">
-          Завантаження статистики...
-        </div>
+        <div id="statsContent" class="stats-list"></div>
         <div class="profile-actions">
           <button id="closeStats" class="btn secondary">Закрити</button>
         </div>
